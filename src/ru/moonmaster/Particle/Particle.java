@@ -6,6 +6,16 @@ public class Particle {
     private SpeedParticle speedParticle;
     private double fintesFunction;
 
+    public Particle(LocationParticle locationParticle, SpeedParticle speedParticle, double fintesFunction) {
+        this.locationParticle = locationParticle;
+        this.speedParticle = speedParticle;
+        this.fintesFunction = fintesFunction;
+    }
+
+    public Particle() {
+        super();
+    }
+
     public LocationParticle getLocationParticle() {
         return locationParticle;
     }
