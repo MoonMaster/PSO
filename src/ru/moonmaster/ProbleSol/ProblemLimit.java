@@ -8,6 +8,10 @@ public class ProblemLimit {
 
     public static double[] trueLocationParticle () {
         trueLocation = new double[2];
+        Line paramLineOne = new Line(5.45, 4.3, 4.4);
+        Line paramLineTwo = new Line(4.55, 3.7, 5.6);
+        Line paramLineThree = new Line(4.25, -2.25, 6.0);
+        Line paramLineThow = new Line(3.75, -3.75, 8.0);
         boolean countIter = false;
         while (!countIter) {
             Random generateRandom = new Random();
@@ -27,4 +31,5 @@ public class ProblemLimit {
         }
         return trueLocation;
     }
+
 }
