@@ -3,7 +3,6 @@ package ru.moonmaster.ProbleSol;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class ProblemLimit {
 
@@ -46,6 +45,15 @@ public class ProblemLimit {
         int indexMaxElY = listCoordinateY.indexOf(Collections.max(listCoordinateY));
 
         double minCoordinateX = listCoordinateX.get(indexMinElX);
+        double maxCoordinateX = listCoordinateX.get(indexMaxElX);
+        double minCoordinateY = listCoordinateY.get(indexMinElY);
+        double maxCoordinateY = listCoordinateY.get(indexMaxElY);
+
+        double x = minCoordinateX + (double)(Math.random() * (maxCoordinateX - minCoordinateX));
+        double y = minCoordinateY + (double)(Math.random() * (maxCoordinateY - minCoordinateY));
+
+        trueLocation[0] = x;
+        trueLocation[1] = y;
 
         /*boolean countIter = false;
         while (!countIter) {
