@@ -5,12 +5,13 @@ public class Line {
     private double paramA;
     private double paramB;
     private double paramC;
+    private String name;
 
-
-    public Line(double paramA, double paramB, double paramC) {
+    public Line(double paramA, double paramB, double paramC, String name) {
         this.paramA = paramA;
         this.paramB = paramB;
         this.paramC = paramC;
+        this.name = name;
     }
 
     public double getParamA() {
@@ -24,5 +25,5 @@ public class Line {
     public double getParamC() {
         return paramC;
     }
-
+    
 }
