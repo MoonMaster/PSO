@@ -1,7 +1,7 @@
 package ru.moonmaster.Interface;
 
 public interface ConstantParticle {
-    int MAX_PARTICLE = 5;
+    int MAX_PARTICLE = 1000;
     int VEL_LOW = -1;
     int VEL_HIGH = 1;
     int MAX_ITERATION = 1000;

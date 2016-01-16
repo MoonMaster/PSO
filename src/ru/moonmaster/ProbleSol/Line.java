@@ -25,5 +25,9 @@ public class Line {
     public double getParamC() {
         return paramC;
     }
-    
+
+    public double calculate(double x, double y) {
+        double result = paramA * x + paramB * y;
+        return result;
+    }
 }

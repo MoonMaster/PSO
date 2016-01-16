@@ -49,30 +49,21 @@ public class ProblemLimit {
         double minCoordinateY = listCoordinateY.get(indexMinElY);
         double maxCoordinateY = listCoordinateY.get(indexMaxElY);
 
-        double x = minCoordinateX + (double)(Math.random() * (maxCoordinateX - minCoordinateX));
-        double y = minCoordinateY + (double)(Math.random() * (maxCoordinateY - minCoordinateY));
+        boolean caseNumb = true;
+        double x=0.0, y=0.0;
 
+        while (caseNumb) {
+
+            x = minCoordinateX + (double) (Math.random() * (maxCoordinateX - minCoordinateX));
+            y = minCoordinateY + (double) (Math.random() * (maxCoordinateY - minCoordinateY));
+
+            if (paramLineOne.calculate(x,y) >= 4.4 & paramLineTwo.calculate(x,y) <=5.6 & paramLineThree.calculate(x,y) >=6.0 & paramLineThow.calculate(x,y) <=8.0) {
+                caseNumb = false;
+            }
+        }
         trueLocation[0] = x;
         trueLocation[1] = y;
 
-        /*boolean countIter = false;
-        while (!countIter) {
-            Random generateRandom = new Random();
-            double x = generateRandom.nextDouble();
-            double y = generateRandom.nextDouble();
-            if ((x > 0) & (y > 0)) {
-                double tmpResLim1 = (5.45 * x) + (4.3 * y);
-                double tmpResLim2 = (4.55 * x) + (3.7 * y);
-                double tmpResLim3 = (4.25 * x) + (-2.25 * y);
-                double tmpResLim4 = (3.75 * x) + (-3.75 * y);
-                if (tmpResLim1 >= 4.4 && tmpResLim2 <= 5.6 && tmpResLim3 >= 6.0 && tmpResLim4 <=8.0) {
-                    countIter = true;
-                    trueLocation[0] = x;
-                    trueLocation[1] = y;
-                }
-            }
-        }
-        */
         return trueLocation;
     }
 

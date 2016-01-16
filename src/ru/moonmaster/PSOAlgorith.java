@@ -36,10 +36,10 @@ public class PSOAlgorith implements ConstantParticle{
         double w;
         double err = 9999;
 
-        while(t < MAX_ITERATION && err > ERR_TOLERANCE) {
+        while(t < MAX_ITERATION & err > ERR_TOLERANCE) {
             // step 1 - update pBest
             for(int i=0; i<MAX_PARTICLE; i++) {
-                if(fitnessValueList[i] < pBest[i]) {
+                if(fitnessValueList[i] > pBest[i]) {
                     pBest[i] = fitnessValueList[i];
                     pBestLocation.set(i, swarm.get(i).getLocationParticle());
                 }
@@ -47,6 +47,7 @@ public class PSOAlgorith implements ConstantParticle{
 
             // step 2 - update gBest
             int bestParticleIndex = PSOUtility.getMinPos(fitnessValueList);
+
             if(t == 0 || fitnessValueList[bestParticleIndex] < gBest) {
                 gBest = fitnessValueList[bestParticleIndex];
                 gBestLocation = swarm.get(bestParticleIndex).getLocationParticle();
@@ -79,7 +80,7 @@ public class PSOAlgorith implements ConstantParticle{
                 p.setLocationParticle(loc);
             }
 
-            err = ProblemSet.evaluate(gBestLocation) - 0; // minimizing the functions means it's getting closer to 0
+            err = ProblemSet.evaluate(gBestLocation) - 0; // error
 
 
             System.out.println("ITERATION " + t + ": ");
