@@ -57,7 +57,7 @@ public class ProblemLimit {
             x = minCoordinateX + (double) (Math.random() * (maxCoordinateX - minCoordinateX));
             y = minCoordinateY + (double) (Math.random() * (maxCoordinateY - minCoordinateY));
 
-            if (paramLineOne.calculate(x,y) >= 4.4 & paramLineTwo.calculate(x,y) <=5.6 & paramLineThree.calculate(x,y) >=6.0 & paramLineThow.calculate(x,y) <=8.0) {
+            if (paramLineOne.calculate(x,y) >= paramLineOne.getParamC() & paramLineTwo.calculate(x,y) <= paramLineTwo.getParamC() & paramLineThree.calculate(x,y) >= paramLineThree.getParamC() & paramLineThow.calculate(x,y) <= paramLineThow.getParamC()) {
                 caseNumb = false;
             }
         }

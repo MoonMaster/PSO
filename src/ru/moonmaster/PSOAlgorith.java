@@ -80,7 +80,7 @@ public class PSOAlgorith implements ConstantParticle{
                 p.setLocationParticle(loc);
             }
 
-            err = ProblemSet.evaluate(gBestLocation) - 0; // error
+            err = ProblemSet.evaluate(gBestLocation) - 0; // calculate error
 
 
             System.out.println("ITERATION " + t + ": ");
